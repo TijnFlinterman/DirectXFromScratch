@@ -80,6 +80,8 @@ bool g_TearingSupported = false;
 // Can be toggled with the Alt+Enter or F11
 bool g_Fullscreen = false;
 
+float g_ClearColor[4] = { 0.4f, 0.6f, 0.9f, 1.0f };
+
 // Window callback function.
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
@@ -473,6 +475,16 @@ void Update()
 
         frameCounter = 0;
         elapsedSeconds = 0.0;
+
+        static int colorIndex = 0;
+        float colors[4][4] = {
+            { 0.4f, 0.6f, 0.9f, 1.0f },
+            { 0.9f, 0.4f, 0.4f, 1.0f },
+            { 0.4f, 0.9f, 0.4f, 1.0f },
+            { 0.9f, 0.9f, 0.4f, 1.0f },
+        };
+        colorIndex = (colorIndex + 1) % 4;
+        memcpy(g_ClearColor, colors[colorIndex], sizeof(g_ClearColor));
     }
 }
 
@@ -480,7 +492,6 @@ void Render()
 {
     auto commandAllocator = g_CommandAllocators[g_CurrentBackBufferIndex];
     auto backBuffer = g_BackBuffers[g_CurrentBackBufferIndex];
-
     commandAllocator->Reset();
     g_CommandList->Reset(commandAllocator.Get(), nullptr);
 
@@ -489,14 +500,11 @@ void Render()
         CD3DX12_RESOURCE_BARRIER barrier = CD3DX12_RESOURCE_BARRIER::Transition(
             backBuffer.Get(),
             D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
-
         g_CommandList->ResourceBarrier(1, &barrier);
 
-        FLOAT clearColor[] = { 0.4f, 0.6f, 0.9f, 1.0f };
         CD3DX12_CPU_DESCRIPTOR_HANDLE rtv(g_RTVDescriptorHeap->GetCPUDescriptorHandleForHeapStart(),
             g_CurrentBackBufferIndex, g_RTVDescriptorSize);
-
-        g_CommandList->ClearRenderTargetView(rtv, clearColor, 0, nullptr);
+        g_CommandList->ClearRenderTargetView(rtv, g_ClearColor, 0, nullptr);
     }
 
     // Present
@@ -508,9 +516,7 @@ void Render()
 
         ThrowIfFailed(g_CommandList->Close());
 
-        ID3D12CommandList* const commandLists[] = {
-            g_CommandList.Get()
-        };
+        ID3D12CommandList* const commandLists[] = { g_CommandList.Get() };
         g_CommandQueue->ExecuteCommandLists(_countof(commandLists), commandLists);
 
         g_FrameFenceValues[g_CurrentBackBufferIndex] = Signal(g_CommandQueue, g_Fence, g_FenceValue);
@@ -520,7 +526,6 @@ void Render()
         ThrowIfFailed(g_SwapChain->Present(syncInterval, presentFlags));
 
         g_CurrentBackBufferIndex = g_SwapChain->GetCurrentBackBufferIndex();
-
         WaitForFenceValue(g_Fence, g_FrameFenceValues[g_CurrentBackBufferIndex], g_FenceEvent);
     }
 }
