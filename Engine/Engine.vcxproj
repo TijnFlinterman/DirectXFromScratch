@@ -123,6 +123,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Application\IDemo.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="CommandQueue.h" />
+    <ClInclude Include="Device.h" />
+    <ClInclude Include="external\directx\d3d12.h" />
+    <ClInclude Include="external\directx\d3d12compatibility.h" />
+    <ClInclude Include="external\directx\d3d12sdklayers.h" />
+    <ClInclude Include="external\directx\d3d12shader.h" />
+    <ClInclude Include="external\directx\D3D12TokenizedProgramFormat.hpp" />
+    <ClInclude Include="external\directx\d3d12video.h" />
+    <ClInclude Include="external\directx\d3dcommon.h" />
+    <ClInclude Include="external\directx\d3dx12.h" />
+    <ClInclude Include="external\directx\d3dx12_barriers.h" />
+    <ClInclude Include="external\directx\d3dx12_check_feature_support.h" />
+    <ClInclude Include="external\directx\d3dx12_core.h" />
+    <ClInclude Include="external\directx\d3dx12_default.h" />
+    <ClInclude Include="external\directx\d3dx12_pipeline_state_stream.h" />
+    <ClInclude Include="external\directx\d3dx12_property_format_table.h" />
+    <ClInclude Include="external\directx\d3dx12_render_pass.h" />
+    <ClInclude Include="external\directx\d3dx12_resource_helpers.h" />
+    <ClInclude Include="external\directx\d3dx12_root_signature.h" />
+    <ClInclude Include="external\directx\d3dx12_state_object.h" />
+    <ClInclude Include="external\directx\dxcore.h" />
+    <ClInclude Include="external\directx\dxcore_interface.h" />
+    <ClInclude Include="external\directx\dxgicommon.h" />
+    <ClInclude Include="external\directx\dxgiformat.h" />
+    <ClInclude Include="Helpers.h" />
+    <ClInclude Include="IDemo.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RendererContent.h" />
+    <ClInclude Include="SwapChain.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="CommandQueue.cpp" />
+    <ClCompile Include="Device.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="RendererContent.cpp" />
+    <ClCompile Include="SwapChain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\PixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="shaders\VertexShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

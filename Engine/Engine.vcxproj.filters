@@ -1,29 +1,167 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="include">
+    <Filter Include="Include">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="source">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="External">
+      <UniqueIdentifier>{d3d49d6a-7d65-4ddf-9580-c4e98979c234}</UniqueIdentifier>
     </Filter>
-    <Filter Include="assets">
+    <Filter Include="Assets">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="source\math">
-      <UniqueIdentifier>{60363584-e8d5-4cb2-a270-b0b078899a3f}</UniqueIdentifier>
+    <Filter Include="Include\Core">
+      <UniqueIdentifier>{7cab708b-ecb3-42a8-a85e-8ba251b376a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\core">
+    <Filter Include="Include\Renderer">
+      <UniqueIdentifier>{b8f25224-8137-4b8c-b7e4-d7bc9b081fe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\Core">
       <UniqueIdentifier>{1d059c25-cdf9-4915-931e-a25eddf4a39c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\graphics">
+    <Filter Include="Source\Graphics">
       <UniqueIdentifier>{91b0e53b-1ff7-4ee3-93e6-06e84b586adb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external">
-      <UniqueIdentifier>{d3d49d6a-7d65-4ddf-9580-c4e98979c234}</UniqueIdentifier>
+    <Filter Include="Source\Math">
+      <UniqueIdentifier>{60363584-e8d5-4cb2-a270-b0b078899a3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Renderer">
+      <UniqueIdentifier>{a899209d-ec5f-46eb-a60c-074310208021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{d53dd3f6-95d7-4e37-b23f-fd24ef5f38d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\directx">
+      <UniqueIdentifier>{6086fec6-c245-43d9-845a-a1dc8aa41e4c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SwapChain.h">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandQueue.h">
+      <Filter>Include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Include\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererContent.h">
+      <Filter>Include\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3d12.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3d12compatibility.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3d12sdklayers.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3d12shader.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\D3D12TokenizedProgramFormat.hpp">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3d12video.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dcommon.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_barriers.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_check_feature_support.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_core.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_default.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_pipeline_state_stream.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_property_format_table.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_render_pass.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_resource_helpers.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_root_signature.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\d3dx12_state_object.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\dxcore.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\dxcore_interface.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\dxgicommon.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="external\directx\dxgiformat.h">
+      <Filter>External\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Application\IDemo.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="IDemo.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="SwapChain.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandQueue.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererContent.cpp">
+      <Filter>Source\Renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shaders\PixelShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\VertexShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

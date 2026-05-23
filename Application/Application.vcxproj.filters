@@ -13,15 +13,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="include\core">
-      <UniqueIdentifier>{97e848d9-df6d-4246-a0a8-966a500013c1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\graphics">
-      <UniqueIdentifier>{c366851d-1caf-4c33-8df3-70869ab27bbd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\math">
-      <UniqueIdentifier>{5b741134-02cf-4b13-b358-f6628dd5b7e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="external">
       <UniqueIdentifier>{769a5076-998d-48db-8efc-e24d7fabf502}</UniqueIdentifier>
     </Filter>
@@ -30,10 +21,19 @@
     <ClCompile Include="main.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="TiangleDemo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="CubeDemo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="helpers.h">
-      <Filter>include\core</Filter>
+    <ClInclude Include="TriangleDemo.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="CubeDemo.h">
+      <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
